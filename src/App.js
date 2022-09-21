@@ -1,5 +1,6 @@
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
   return(
     <div className="App">
       <Navbar />
+      <ItemListContainer mensaje='¡Welcome to Vans Store! 🛹'/>
     </div>
   )
 }

@@ -2,9 +2,14 @@ import './ItemListContainer.css'
 
 const ItemListContainer = ({mensaje}) => {
     return (
-        <h3>
-            {mensaje}
-        </h3>
+        <div className='div-ItemListContainer'>
+            <h1>
+                {mensaje}
+            </h1>
+            <p>
+                Encontrá los productos que buscas acá. 🔥
+            </p>
+        </div>
     )
 }
 

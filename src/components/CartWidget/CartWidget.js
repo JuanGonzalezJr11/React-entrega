@@ -3,9 +3,9 @@ import cart from './assets/shopping-cart.png'
 
 const CartWidget = () => {
     return(
-        <div>
-            <img src={cart} className='cart-img' alt='cart' />
-            0
+        <div className='div-CartWidget'>
+            <img src={cart} alt='cart' />
+            <label>0</label>
         </div>
     )
 }

@@ -16,11 +16,25 @@ const Navbar = () => {
                     Products
                 </button>
                 <button>
+                    About Us
+                </button>
+                <button>
                     Contacts
                 </button>
             </div>
             <div className='cart'>
                 <CartWidget />
+            </div>
+            <div className='div-login'>
+                <p>
+                    Are you member?
+                </p>
+                <button>
+                    Login
+                </button>
+                <button>
+                    Register
+                </button>
             </div>
         </nav>
     )

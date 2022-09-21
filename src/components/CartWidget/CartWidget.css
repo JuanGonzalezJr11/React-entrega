@@ -1,5 +1,9 @@
-.cart-img {
+.div-CartWidget img {
     height: 30px;
     width: 30px;
     margin: 0px 3px 0px 3px;
+}
+
+.div-CartWidget label {
+    font-weight: bold;
 }
