@@ -1,0 +1,32 @@
+nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cart {
+    display: flex;
+    align-items: center;
+}
+
+.div-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.div-buttons button {
+    width: 100px;
+    height: 50px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5%;
+}
+
+.div-buttons button:hover {
+    background-color: black;
+    color: white;
+}
+
+.logo-img {
+    height: 120px;
+    width: 200px;
+}
