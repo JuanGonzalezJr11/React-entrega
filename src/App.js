@@ -1,9 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import AvatarJsx from './components/AvatarJsx';
-import Button from './components/Button/Button';
 import Navbar from './components/Navbar/Navbar';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 function App() {
 
