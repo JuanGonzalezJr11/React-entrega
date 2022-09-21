@@ -1,6 +1,7 @@
 import './Navbar.css'
 import CartWidget from '../CartWidget/CartWidget'
 import logo from './assets/Logo-VANS.png.png'
+import Login from '../Login/Login'
 
 const Navbar = () => {
     return (
@@ -22,19 +23,11 @@ const Navbar = () => {
                     Contacts
                 </button>
             </div>
-            <div className='cart'>
+            <div>
                 <CartWidget />
             </div>
-            <div className='div-login'>
-                <p>
-                    Are you member?
-                </p>
-                <button>
-                    Login
-                </button>
-                <button>
-                    Register
-                </button>
+            <div>
+                <Login />
             </div>
         </nav>
     )

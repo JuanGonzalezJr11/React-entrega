@@ -1,0 +1,12 @@
+.footer {
+    position: absolute;
+    width: 100%;
+    border-top: solid 1px lightgrey;
+    bottom: 0px;
+}
+
+.footer p {
+    font-size: 12px;
+    color: gray;
+    margin: 10px;
+}

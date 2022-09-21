@@ -1,0 +1,15 @@
+.div-login p {
+    font-size: 15px;
+    margin: 0px;
+}
+
+.div-login button {
+    width: 100px;
+    border-radius: 5%;
+    margin: 5px;
+}
+
+.div-login button:hover {
+    background-color: black;
+    color: white;
+}
