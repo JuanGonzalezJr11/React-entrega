@@ -7,17 +7,17 @@ function App() {
     <div className="App">
       <header className="App-header">
         <AvatarJsx />
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          ¡Bienvenidos a Vans Store!
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://www.vans.com.ar"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Visitanos
         </a>
       </header>
     </div>
