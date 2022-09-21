@@ -1,16 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
 import AvatarJsx from './components/AvatarJsx';
+import Button from './components/Button/Button';
 
 function App() {
+
+  const cancel = () => {
+    console.log('cancele')
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         <AvatarJsx />
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <p>
+        <h1 className="App-title">
           ¡Bienvenidos a Vans Store!
-        </p>
+        </h1>
         <a
           className="App-link"
           href="https://www.vans.com.ar"
@@ -19,6 +25,8 @@ function App() {
         >
           Visitanos
         </a>
+        <Button label={'Aceptar'} background={'white'} color={'red'} action={() => console.log('Acepte')} />
+        <Button label={'Cancelar'} background={'white'} color={'black'} action={cancel}/>
       </header>
     </div>
   );
