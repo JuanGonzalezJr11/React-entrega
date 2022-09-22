@@ -3,10 +3,11 @@
     width: 100%;
     border-top: solid 1px lightgrey;
     bottom: 0px;
+    background-color: white;
 }
 
 .footer p {
-    font-size: 12px;
+    font-size: 11px;
     color: gray;
-    margin: 10px;
+    margin: 2px;
 }

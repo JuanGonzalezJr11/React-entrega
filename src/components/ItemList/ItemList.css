@@ -1,0 +1,19 @@
+.div-ItemList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.div-ItemList .card {
+    width: 25%;
+    color: black;
+    padding: 8px;
+    margin: 15px;
+    align-items: center;
+}
+
+.div-ItemList .card img {
+    width: 250px;
+    height: 250px;
+}

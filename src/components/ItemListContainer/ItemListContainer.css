@@ -1,3 +1,14 @@
+.div-ItemListContainer {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 90%;
+    margin: 25px 0px 35px 0px;
+}
+
 .div-ItemListContainer p {
     font-size: 16px;
+}
+
+.div-ItemListContainer h1 {
+    margin-top: 10px;
 }

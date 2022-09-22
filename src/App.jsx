@@ -33,9 +33,13 @@ function App() {
 
   return(
     <div className="App">
-      <Navbar />
-      <ItemListContainer mensaje='¡Welcome to Vans Store! 🛹'/>
-      <Footer />
+      <div className="App-header">
+        <Navbar />
+      </div>
+      <div className="App-body">
+        <ItemListContainer mensaje='¡Welcome to Vans Store! 🛹'/>
+        <Footer />
+      </div>
     </div>
   )
 }
