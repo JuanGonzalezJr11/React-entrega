@@ -1,7 +1,8 @@
 import './ItemListContainer.css'
-import { useState, useEffect } from 'react';
-import { getProducts } from '../../asyncMock';
+import { useState, useEffect } from 'react'
+import { getProducts } from '../../asyncMock'
 import ItemList from '../ItemList/ItemList'
+import Loading from '../Loading/Loading'
 
 const ItemListContainer = ({mensaje}) => {
     const [products, setProducts] = useState([])
@@ -21,7 +22,7 @@ const ItemListContainer = ({mensaje}) => {
     }, [])
     
     if(loading){
-        return <h2>Loading...</h2>
+        return <Loading />
     }
 
     if(error){

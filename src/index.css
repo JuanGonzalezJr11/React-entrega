@@ -1,6 +1,7 @@
 html {
   min-width: 100%;
   min-height: 100%;
+  position: relative;
 }
 
 body {
@@ -14,9 +15,10 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 100%;
-  width: 100%;
+  min-height: 100vh; /* Como mínimo el alto de la página es lo que mide el view port. */
+  min-width: 100%;
   backdrop-filter: blur(2px);
+  position: relative;
 }
 
 code {
