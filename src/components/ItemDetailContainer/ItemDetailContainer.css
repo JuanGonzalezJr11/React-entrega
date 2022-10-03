@@ -1,0 +1,29 @@
+.div-ItemDetailContainer {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 70%;
+    margin: 25px 0px 35px 0px;
+}
+
+.div-ItemDetailContainer h1 {
+    margin: 10px;
+}
+
+.div-ItemDetailContainer .content {
+    display: flex;
+    justify-content: center;
+}
+
+.div-ItemDetailContainer .content div{
+    padding: 30px;
+    text-align: left;
+}
+
+.div-ItemDetailContainer .content div p{
+    font-size: 20px;
+}
+
+.img-ItemDetailContainer{
+    width: 500px;
+    height: 500px;
+}
