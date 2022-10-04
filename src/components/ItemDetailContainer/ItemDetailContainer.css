@@ -17,13 +17,36 @@
 .div-ItemDetailContainer .content div{
     padding: 30px;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: space-between; */
 }
 
 .div-ItemDetailContainer .content div p{
     font-size: 20px;
 }
 
+.div-ItemDetailContainer .content div button{
+    background-color: firebrick;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+    width: 160px;
+    margin-bottom: 30px;
+}
+
+.div-ItemDetailContainer .content div button:hover{
+    background-color: crimson;
+}
+
 .img-ItemDetailContainer{
     width: 500px;
     height: 500px;
 }
+
+/* .div_ItemDetailContainer-div_button {
+    display: flex;
+    justify-content: center;
+} */

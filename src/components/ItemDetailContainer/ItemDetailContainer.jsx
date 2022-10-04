@@ -29,11 +29,16 @@ const ItemDetailContainer = () => {
                     <img className='img-ItemDetailContainer' src={product.img} alt='product' />
                 </div>
                 <div>
-                    {/* Lo que hace el "?" delante del objeto es preguntar si la variable es un objeto, de ser así muestra esa propiedad, si no, no lee la propiedad. */}
-                    <p><b>Name:</b> {product.name}</p>
-                    <p><b>Color:</b> {product.color}</p>
-                    <p><b>Description:</b> Espacio para descripción personalizada referida a cada producto. Texto de relleno.</p>
-                    <p><b>Price:</b> ${product.price}</p>
+                    <div className='row'>
+                        {/* Lo que hace el "?" delante del objeto es preguntar si la variable es un objeto, de ser así muestra esa propiedad, si no, no lee la propiedad. */}
+                        <p><b>Name:</b> {product.name}</p>
+                        <p><b>Color:</b> {product.color}</p>
+                        <p><b>Description:</b> Espacio para descripción personalizada referida a cada producto. Texto de relleno.</p>
+                        <p><b>Price:</b> ${product.price}</p>
+                    </div>
+                    <div className='row'>
+                        <button>ADD TO CART</button>
+                    </div>
                 </div>
             </div>
         </div>

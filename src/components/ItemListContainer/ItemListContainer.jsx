@@ -3,24 +3,42 @@ import { useState, useEffect } from 'react'
 import { getProducts } from '../../asyncMock'
 import ItemList from '../ItemList/ItemList'
 import Loading from '../Loading/Loading'
+import FilterProduct from '../FilterProduct/FilterProduct'
+import { useParams } from 'react-router-dom'
+import { getProductsByCategory } from '../../asyncMock'
 
 const ItemListContainer = ({mensaje}) => {
     const [products, setProducts] = useState([])
     const [error, setError] = useState(false)
     const [loading, setLoading] = useState(true)
+    const {categoryId} = useParams()
 
     useEffect(() => {
-        getProducts().then(res => {
-            console.log(res)
-            setProducts(res)
-        }).catch(error => {
-            console.log(error)
-            setError(true)
-        }).finally(() => {
-            setLoading(false)
-        })
-    }, [])
-    
+        if(!categoryId){
+            setLoading(true)
+            getProducts().then(res => {
+                console.log(res)
+                setProducts(res)
+            }).catch(error => {
+                console.log(error)
+                setError(true)
+            }).finally(() => {
+                setLoading(false)
+            })
+        } else {
+            setLoading(true)
+            getProductsByCategory(categoryId).then(res => {
+                console.log(res)
+                setProducts(res)
+            }).catch(error => {
+                console.log(error)
+                setError(true)
+            }).finally(() => {
+                setLoading(false)
+            })
+        }
+    }, [categoryId])
+    console.log(loading)
     if(loading){
         return <Loading />
     }
@@ -33,27 +51,14 @@ const ItemListContainer = ({mensaje}) => {
         <div className='div-ItemListContainer'>
             <div className='header'>
                 <h1>
-                    {mensaje}
+                    ¡Welcome to Vans Store! 🛹
                 </h1>
                 <p>
                     Encontrá los productos que buscas acá. 🔥
                 </p>
             </div>
             <nav className='nav'>
-                <label>Search:</label>
-                <button>All</button>
-                <button>Shoes</button>
-                <button>Shirts</button>
-                <button>Hoodies</button>
-                <button>Jackets</button>
-                <button>Hats</button>
-                <button>Shorts</button>
-                <button>Boardshorts</button>
-                <button>Pants</button>
-                <button>Bags</button>
-                <button>Socks</button>
-                <button>Wallets</button>
-                <button>Sunglasses</button>
+                <FilterProduct />
             </nav>
             <div className='body'>
                 <ItemList products={products} />

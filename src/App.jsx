@@ -14,7 +14,8 @@ function App() {
         </div>
         <div className="App-body">
           <Routes>
-            <Route path='/products' element={<ItemListContainer mensaje='¡Welcome to Vans Store! 🛹'/>} />
+            <Route path='/products' element={<ItemListContainer />} />
+            <Route path='/products/:categoryId' element={<ItemListContainer />} />
             <Route path='/products/detail/:productId' element={<ItemDetailContainer />} />
           </Routes>
           <Footer />

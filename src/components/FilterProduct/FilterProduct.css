@@ -1,0 +1,18 @@
+.div-FilterProduct label {
+    font-size: 14px;
+    font-style: italic;
+    margin: 0px 5px 0px 10px;
+}
+
+.div-FilterProduct button{
+    font-size: 13px;
+    border: none;
+    border-radius: 4px;
+    background-color: lightgray;
+    margin: 5px; 
+}
+
+.div-FilterProduct button:hover{
+    color: white;
+    background-color: gray;
+}
