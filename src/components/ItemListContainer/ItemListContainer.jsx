@@ -31,14 +31,35 @@ const ItemListContainer = ({mensaje}) => {
 
     return (
         <div className='div-ItemListContainer'>
-            <h1>
-                {mensaje}
-            </h1>
-            <p>
-                Encontrá los productos que buscas acá. 🔥
-            </p>
-            <ItemList products={products} />
+            <div className='header'>
+                <h1>
+                    {mensaje}
+                </h1>
+                <p>
+                    Encontrá los productos que buscas acá. 🔥
+                </p>
+            </div>
+            <nav className='nav'>
+                <label>Search:</label>
+                <button>All</button>
+                <button>Shoes</button>
+                <button>Shirts</button>
+                <button>Hoodies</button>
+                <button>Jackets</button>
+                <button>Hats</button>
+                <button>Shorts</button>
+                <button>Boardshorts</button>
+                <button>Pants</button>
+                <button>Bags</button>
+                <button>Socks</button>
+                <button>Wallets</button>
+                <button>Sunglasses</button>
+            </nav>
+            <div className='body'>
+                <ItemList products={products} />
+            </div>    
         </div>
+        
     )
 }
 

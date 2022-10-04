@@ -16,6 +16,7 @@
 .div-ItemList .card img {
     width: 250px;
     height: 250px;
+    margin: 15px;
 }
 
 .div-ItemList .card a {

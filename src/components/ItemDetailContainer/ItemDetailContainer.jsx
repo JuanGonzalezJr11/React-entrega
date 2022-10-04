@@ -30,10 +30,10 @@ const ItemDetailContainer = () => {
                 </div>
                 <div>
                     {/* Lo que hace el "?" delante del objeto es preguntar si la variable es un objeto, de ser así muestra esa propiedad, si no, no lee la propiedad. */}
-                    <p><b>Nombre:</b> {product.name}</p>
+                    <p><b>Name:</b> {product.name}</p>
                     <p><b>Color:</b> {product.color}</p>
-                    <p><b>Descripción:</b> Espacio para descripción personalizada referida a cada producto. Texto de relleno.</p>
-                    <p><b>Precio:</b> ${product.price}</p>
+                    <p><b>Description:</b> Espacio para descripción personalizada referida a cada producto. Texto de relleno.</p>
+                    <p><b>Price:</b> ${product.price}</p>
                 </div>
             </div>
         </div>

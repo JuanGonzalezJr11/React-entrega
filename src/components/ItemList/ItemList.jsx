@@ -10,8 +10,8 @@ const ItemList = ({products}) => {
                         <h4>{product.name}</h4>
                     </Link>
                     <img src={product.img} alt='product' />
-                    <p>Color: {product.color}</p>
-                    <p>${product.price}</p>
+                    {/* <p>Color: {product.color}</p> */}
+                    <p><b>${product.price}</b></p>
                 </div>
             )}
         </div>

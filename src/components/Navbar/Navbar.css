@@ -10,6 +10,7 @@ nav {
     font-size: 15px;
     border: none;
     border-radius: 5%;
+    background-color: transparent;
 }
 
 .div-buttons button:hover {
