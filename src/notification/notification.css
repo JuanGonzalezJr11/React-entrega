@@ -1,0 +1,15 @@
+.div-Notification{
+    position: absolute;
+    top: 130px;
+    right: 15px;
+    padding: 20px 10px;
+    color: white;
+}
+
+.div-Notification .success{
+    background-color: green;
+}
+
+.div-Notification .error {
+    background-color: red;
+}
