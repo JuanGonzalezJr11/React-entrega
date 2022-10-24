@@ -3,11 +3,17 @@ import { useState, useEffect } from "react"
 import { getProduct } from "../../asyncMock"
 import Loading from '../Loading/Loading'
 import { useParams } from "react-router-dom"
+import Count from '../Count/Count'
+import { useContext } from 'react'
+import CartProvider, { CartContext } from '../../context/CartContext'
+
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState({})
     const [loading, setLoading] = useState(true)
     const {productId} = useParams()
+    const {onAddProduct} = useContext(CartContext)
+    const [quantity, setQuantity] = useState(0)
 
     useEffect(() => {
         getProduct(productId).then(response => {
@@ -19,6 +25,16 @@ const ItemDetailContainer = () => {
 
     if(loading){
         return <Loading />
+    }
+
+    const addProduct = (quantity) => {
+        const productToAdd= {
+            id:product.id,
+            name: product.name,
+            price: product.price,
+            quantity
+        }
+        onAddProduct(productToAdd)
     }
 
     return (
@@ -37,7 +53,7 @@ const ItemDetailContainer = () => {
                         <p><b>Price:</b> ${product.price}</p>
                     </div>
                     <div className='row'>
-                        <button>ADD TO CART</button>
+                        <Count addProduct={addProduct}/>
                     </div>
                 </div>
             </div>
