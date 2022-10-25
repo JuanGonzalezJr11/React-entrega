@@ -1,0 +1,44 @@
+.div-Count {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin-bottom: 15px;
+}
+
+.div-Count .button-primary{
+    background-color: firebrick;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+    width: 160px;
+    margin: 0px 10px;
+}
+
+.div-Count .button-primary:hover{
+    background-color: crimson;
+}
+
+.div-Count .button-dec-add{
+    width: 50px;
+    margin: 0px 0px;
+}
+
+.div-Count input{
+    background-color: white;
+    font-size: 20px;
+    width: 50px;
+    text-align: center;
+    border: none;
+    margin: 0px;
+}
+
+.div-Count .button-disabled{
+    background-color: grey;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+    width: 50px;
+    margin: 0px 0px;
+}

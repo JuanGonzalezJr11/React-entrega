@@ -1,43 +1,38 @@
 import './ItemListContainer.css'
-import { useState, useEffect } from 'react'
-import { getProducts } from '../../asyncMock'
+import { useState, useEffect, useContext } from 'react'
 import ItemList from '../ItemList/ItemList'
 import Loading from '../Loading/Loading'
 import FilterProduct from '../FilterProduct/FilterProduct'
 import { useParams } from 'react-router-dom'
-import { getProductsByCategory } from '../../asyncMock'
+import { getDocs, collection, query, where } from 'firebase/firestore'
+import { db } from '../../services/firebase'
+import { NotificationContext } from '../../notification/notification'
+
 
 const ItemListContainer = ({mensaje}) => {
-    const [products, setProducts] = useState([])
-    const [error, setError] = useState(false)
-    const [loading, setLoading] = useState(true)
-    const {categoryId} = useParams()
+    const [products, setProducts] = useState([]);
+    const [error, setError] = useState(false);
+    const [loading, setLoading] = useState(true);
+    const {categoryId} = useParams();
+    const {setNotification} = useContext(NotificationContext);
 
     useEffect(() => {
-        if(!categoryId){
-            setLoading(true)
-            getProducts().then(res => {
-                console.log(res)
-                setProducts(res)
-            }).catch(error => {
-                console.log(error)
-                setError(true)
-            }).finally(() => {
-                setLoading(false)
+        setLoading(true);
+        const collectionRef = categoryId ? query(collection(db, 'products'), where('category', '==', categoryId)) : collection(db, 'products');
+        getDocs(collectionRef).then(res => {
+            const productsAdapted = res.docs.map(doc => {
+                const data = doc.data();
+                return { id: doc.id, ...data };
             })
-        } else {
-            setLoading(true)
-            getProductsByCategory(categoryId).then(res => {
-                console.log(res)
-                setProducts(res)
-            }).catch(error => {
-                console.log(error)
-                setError(true)
-            }).finally(() => {
-                setLoading(false)
-            })
-        }
+            setProducts(productsAdapted)
+        }).catch(() => {
+            setError(true);
+            setNotification('error', 'No se pudo obtener los productos.');
+        }).finally(() => {
+            setLoading(false);
+        })
     }, [categoryId])
+
     console.log(loading)
     if(loading){
         return <Loading />

@@ -15,7 +15,7 @@
 }
 
 .div-ItemDetailContainer .content div{
-    padding: 30px;
+    padding: 20px;
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -27,20 +27,6 @@
     font-size: 20px;
 }
 
-.div-ItemDetailContainer .content div button{
-    background-color: firebrick;
-    border: none;
-    padding: 15px;
-    color: white;
-    font-weight: bold;
-    width: 160px;
-    margin-bottom: 30px;
-}
-
-.div-ItemDetailContainer .content div button:hover{
-    background-color: crimson;
-}
-
 .img-ItemDetailContainer{
     width: 500px;
     height: 500px;
@@ -50,3 +36,8 @@
     display: flex;
     justify-content: center;
 } */
+
+.div-Detail{
+    display: flex;
+    flex-direction: column;
+}

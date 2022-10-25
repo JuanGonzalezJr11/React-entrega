@@ -1,39 +1,47 @@
 import './ItemDetailContainer.css'
 import { useState, useEffect } from "react"
-import { getProduct } from "../../asyncMock"
 import Loading from '../Loading/Loading'
 import { useParams } from "react-router-dom"
 import Count from '../Count/Count'
 import { useContext } from 'react'
 import CartProvider, { CartContext } from '../../context/CartContext'
+import { getDoc, doc } from 'firebase/firestore'
+import { NotificationContext } from '../../notification/notification'
+import { db } from '../../services/firebase'
 
 
 const ItemDetailContainer = () => {
-    const [product, setProduct] = useState({})
-    const [loading, setLoading] = useState(true)
-    const {productId} = useParams()
-    const {onAddProduct} = useContext(CartContext)
-    const [quantity, setQuantity] = useState(0)
+    const [product, setProduct] = useState({});
+    const [loading, setLoading] = useState(true);
+    const {productId} = useParams();
+    const {onAddProduct} = useContext(CartContext);
+    const [quantity, setQuantity] = useState(0);
+    const {setNotification} = useContext(NotificationContext);
 
     useEffect(() => {
-        getProduct(productId).then(response => {
-            setProduct(response)
+        const docRef = doc(db, 'products', productId);
+        getDoc(docRef).then(res => {
+            const data = res.data();
+            const productAdapted = {id: res.id, ...data}
+            setProduct(productAdapted)
+        }).catch(() => {
+            setNotification('error', 'No se pudo obtener los productos.');
         }).finally(() => {
             setLoading(false)
-        })
+        });
     }, [productId])
 
     if(loading){
         return <Loading />
     }
+    console.log(product);
 
     const addProduct = (quantity) => {
         const productToAdd= {
-            id:product.id,
-            name: product.name,
-            price: product.price,
+            ...product,
             quantity
         }
+        console.log(productToAdd)
         onAddProduct(productToAdd)
     }
 
@@ -52,11 +60,9 @@ const ItemDetailContainer = () => {
                         <p><b>Description:</b> Espacio para descripción personalizada referida a cada producto. Texto de relleno.</p>
                         <p><b>Price:</b> ${product.price}</p>
                     </div>
-                    <div className='row'>
-                        <Count addProduct={addProduct}/>
-                    </div>
                 </div>
             </div>
+            <Count addProduct={addProduct}/>
         </div>
     )
 }

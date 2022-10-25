@@ -1,0 +1,46 @@
+.div-Cart {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 70%;
+    margin: 25px 0px 35px 0px;
+}
+
+.div-Cart button{
+    background-color: firebrick;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+    width: 160px;
+    margin: 0px 10px;
+}
+
+.div-Cart button:hover{
+    background-color: crimson;
+}
+
+.div-Cart .button-default{
+    background-color: grey;
+}
+
+.div-Cart .button-default:hover{
+    background-color: lightgray;
+    color: black;
+}
+
+.div-Cart .div-Buttons{
+    margin: 10px;
+}
+
+.div-Cart .p-total{
+    font-weight: bold;
+    font-size: 25px;
+    text-decoration: underline;
+    margin-bottom: 30px;
+}
+
+.div-Cart .p-cartVacio{
+    font-weight: bold;
+    font-size: 20px;
+    margin: 25px;
+}
