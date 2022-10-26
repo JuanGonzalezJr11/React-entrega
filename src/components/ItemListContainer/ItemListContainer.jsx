@@ -33,7 +33,6 @@ const ItemListContainer = ({mensaje}) => {
         })
     }, [categoryId])
 
-    console.log(loading)
     if(loading){
         return <Loading />
     }

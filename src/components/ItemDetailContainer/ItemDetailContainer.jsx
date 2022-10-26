@@ -34,14 +34,12 @@ const ItemDetailContainer = () => {
     if(loading){
         return <Loading />
     }
-    console.log(product);
 
     const addProduct = (quantity) => {
         const productToAdd= {
             ...product,
             quantity
         }
-        console.log(productToAdd)
         onAddProduct(productToAdd)
     }
 
