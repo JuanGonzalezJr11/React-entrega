@@ -17,8 +17,8 @@ const Count = ({addProduct}) => {
     return (
         <div className='div-Count'>
             <button className={counter === 1 ? 'button-disabled' : 'button-primary button-dec-add'} onClick={handleDecrement}>-</button>
-            <input type='text' disabled='false' value={counter}></input>
-            <button className='button-primary button-dec-add'onClick={handleAdd}>+</button>
+            <input type='text' disabled value={counter}></input>
+            <button className='button-primary button-dec-add' onClick={handleAdd}>+</button>
             <button className='button-primary' onClick={() => addProduct(counter)}>ADD TO CART</button>
         </div>
     )

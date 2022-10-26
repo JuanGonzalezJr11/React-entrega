@@ -6,10 +6,10 @@
     color: white;
 }
 
-.div-Notification .success{
-    background-color: green;
+.success{
+    background-color: forestgreen;
 }
 
-.div-Notification .error {
-    background-color: red;
+.error {
+    background-color: brown;
 }

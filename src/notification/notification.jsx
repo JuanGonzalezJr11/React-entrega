@@ -22,12 +22,12 @@ export const NotificationProvider = ({children}) => {
         setSeverity(severity)
         setTimeout(() => {
             setMessage('')
-        }, 3000)
+        }, 5000)
     }
 
     return (
         <NotificationContext.Provider value={{setNotification}}>
-            <Notification msg={message} svt={severity}/>
+            <Notification msg={message} severity={severity}/>
             {children}
         </NotificationContext.Provider>
     )

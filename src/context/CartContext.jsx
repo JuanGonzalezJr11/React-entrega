@@ -11,30 +11,52 @@ const CartProvider = ({children}) => {
 
     const onAddProduct = (product) => {
         setCart([...cart, product])
-        setNotification('success', 'Se añadieron los productos.');
+        
+        cart.forEach(c => {
+            if(c.id === product.id){
+                let oldQuantity = c.quantity;
+                const cartList = cart.filter(c => c.id !== product.id);
+                product.quantity += oldQuantity;
+                setCart([...cartList, product]);
+            }
+        })
+        
+        let message = '';
+        if(product.quantity > 1)
+            message = 'Se añadieron los productos al carrito.';
+        else
+            message = 'Se añadió el producto al carrito.';
+
+        setNotification('success', message);
     }
-    console.log(cart)
 
     const quantityAdd = () =>{
-        let quantity = 0
+        let quantity = 0;
         cart.forEach(c => {
-            quantity += c.quantity
+            quantity += c.quantity;
         })
-
-        return quantity
+        return quantity;
     }
 
     const deleteProduct = (id) => {
         const cartList = cart.filter(c => c.id !== id);
-        setCart(cartList);
+            setCart(cartList);
     }
     
     const deleteAllProducts = () => {
         setCart([]);
     }
 
+    const totalPriceCart = () => {
+        let total = 0;
+        cart.forEach(c => {
+            total += c.price * c.quantity;
+        });
+        return total;
+    }
+
     return (
-        <CartContext.Provider value={{onAddProduct, quantityAdd, cart, deleteProduct, deleteAllProducts}}>
+        <CartContext.Provider value={{onAddProduct, quantityAdd, cart, deleteProduct, deleteAllProducts, totalPriceCart}}>
             {children}
         </CartContext.Provider>
     )
