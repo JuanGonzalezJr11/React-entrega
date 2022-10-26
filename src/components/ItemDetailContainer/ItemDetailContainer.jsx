@@ -6,7 +6,7 @@ import Count from '../Count/Count'
 import { useContext } from 'react'
 import CartProvider, { CartContext } from '../../context/CartContext'
 import { getDoc, doc } from 'firebase/firestore'
-import { NotificationContext } from '../../notification/notification'
+import { NotificationContext } from '../../notification/Notification'
 import { db } from '../../services/firebase'
 
 

@@ -6,15 +6,13 @@ const Count = ({addProduct}) => {
     const [counter, setCounter] = useState(1)
 
     const handleDecrement = () => {
-        if(counter != 1)
+        if(counter !== 1)
             setCounter(counter - 1)
     }
 
     const handleAdd = () => {
         setCounter(counter + 1)
     }
-
-
 
     return (
         <div className='div-Count'>

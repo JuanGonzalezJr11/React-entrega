@@ -4,7 +4,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import Footer from './components/Footer/Footer'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
-import { NotificationProvider } from './notification/notification'
+import { NotificationProvider } from './notification/Notification'
 import CartProvider from './context/CartContext';
 import Checkout from './components/Checkout/Checkout';
 import Cart from './components/Cart/Cart'

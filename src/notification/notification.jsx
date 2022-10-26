@@ -1,4 +1,4 @@
-import './notification.css'
+import './Notification.css'
 import { createContext, useState } from "react"
 
 const Notification = ({msg, severity}) => {

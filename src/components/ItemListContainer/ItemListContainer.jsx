@@ -6,7 +6,7 @@ import FilterProduct from '../FilterProduct/FilterProduct'
 import { useParams } from 'react-router-dom'
 import { getDocs, collection, query, where } from 'firebase/firestore'
 import { db } from '../../services/firebase'
-import { NotificationContext } from '../../notification/notification'
+import { NotificationContext } from '../../notification/Notification'
 
 
 const ItemListContainer = ({mensaje}) => {
