@@ -5,38 +5,18 @@ import { addDoc, collection, documentId, getDocs, query, where, writeBatch } fro
 import { db } from '../../services/firebase'
 import { useState } from 'react'
 import Loading from '../Loading/Loading'
+import FormCheckout from '../FormCheckout/FormCheckout'
 
 const Checkout = () => {
     const {cart, totalPriceCart, deleteAllProducts} = useContext(CartContext);
     const total = totalPriceCart();
     const [loading, setLoading] = useState(false);
 
-    const [name, setName] = useState('');
-    const [phone, setPhone] = useState('');
-    const [email, setEmail] = useState('');
-
-    const changeName = (event) => {
-        let name = event.target.value;
-        setName(name);
-    }
-    const changePhone = (event) => {
-        let phone = event.target.value;
-        setPhone(phone);
-    }
-    const changeEmail = (event) => {
-        let email = event.target.value;
-        setEmail(email);
-    }
-
-    const createOrder = async () => {
+    const createOrder = async (buyer) => {
         setLoading(true);
         try {
             const objOrder = {
-                buyer: {
-                    name: name,
-                    phone: phone,
-                    email: email
-                },
+                buyer: buyer,
                 items: cart,
                 total
             };
@@ -81,9 +61,6 @@ const Checkout = () => {
         }
         finally{
             setLoading(false);
-            setName('');
-            setPhone('');
-            setEmail('');
         }
     }
     
@@ -92,19 +69,7 @@ const Checkout = () => {
     }
 
     return (
-        <div className='div-Checkout'>
-            <h1>Checkout ✔</h1>
-            <div className='form'>
-                <p>👤 Name:</p>
-                <input id='txtName' type='text' value={name} onChange={changeName}></input>
-                <p>☎ Phone:</p>
-                <input id='txtPhone' type='text' value={phone} onChange={changePhone}></input>
-                <p>✉ E-mail:</p>
-                <input id='txtEmail' type='text' value={email} onChange={changeEmail}></input>
-                <br />
-                <button onClick={createOrder}>Submit and buy</button>
-            </div>
-        </div>
+        <FormCheckout createOrder={createOrder}/>
     )
 }
 

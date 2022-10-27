@@ -4,7 +4,7 @@ import Loading from '../Loading/Loading'
 import { useParams } from "react-router-dom"
 import Count from '../Count/Count'
 import { useContext } from 'react'
-import CartProvider, { CartContext } from '../../context/CartContext'
+import { CartContext } from '../../context/CartContext'
 import { getDoc, doc } from 'firebase/firestore'
 import { NotificationContext } from '../../notification/Notification'
 import { db } from '../../services/firebase'
@@ -15,7 +15,6 @@ const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true);
     const {productId} = useParams();
     const {onAddProduct} = useContext(CartContext);
-    const [quantity, setQuantity] = useState(0);
     const {setNotification} = useContext(NotificationContext);
 
     useEffect(() => {
@@ -60,7 +59,7 @@ const ItemDetailContainer = () => {
                     </div>
                 </div>
             </div>
-            <Count addProduct={addProduct}/>
+            <Count addProduct={addProduct} stock={product.stock}/>
         </div>
     )
 }
