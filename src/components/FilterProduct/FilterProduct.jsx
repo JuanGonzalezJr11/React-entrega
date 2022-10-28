@@ -8,16 +8,16 @@ const FilterProduct = () => {
             <Link to='/products'><button>All</button></Link>
             <Link to='/products/shoes'><button>Shoes</button></Link>
             <Link to='/products/shirts'><button>Shirts</button></Link>
-            <button>Hoodies</button>
-            <button>Jackets</button>
+            <Link to='/products/hoodies'><button>Hoodies</button></Link>
+            <Link to='/products/jackets'><button>Jackets</button></Link>
             <Link to='/products/hats'><button>Hats</button></Link>
-            <button>Shorts</button>
-            <button>Boardshorts</button>
+            <Link to='/products/shorts'><button>Shorts</button></Link>
+            <Link to='/products/boardshorts'><button>Boardshorts</button></Link>
             <Link to='/products/pants'><button>Pants</button></Link>
-            <button>Bags</button>
-            <button>Socks</button>
-            <button>Wallets</button>
-            <button>Sunglasses</button>
+            <Link to='/products/bags'><button>Bags</button></Link>
+            <Link to='/products/socks'><button>Socks</button></Link>
+            <Link to='/products/wallets'><button>Wallets</button></Link>
+            <Link to='/products/sunglasses'><button>Sunglasses</button></Link>
         </div>
     )
 }

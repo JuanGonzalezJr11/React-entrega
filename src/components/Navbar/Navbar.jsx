@@ -11,9 +11,11 @@ const Navbar = () => {
                 <img src={logo} className='logo-img' alt='logo' />
             </div>
             <div className='div-buttons'>
-                <button>
-                    Home
-                </button>
+                <Link to='/home'>
+                    <button>
+                        Home
+                    </button>
+                </Link>
                 <Link to='/products'>
                     <button>
                         Products

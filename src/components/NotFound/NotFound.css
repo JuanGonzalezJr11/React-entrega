@@ -1,0 +1,17 @@
+.div-NotFound{
+    color: black;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 60%;
+    margin: 25px 0px 35px 0px;
+}
+
+.title-NotFound{
+    font-size: 50px;
+    margin: 20px;
+}
+
+.img-NotFound {
+    width: 550px;
+    height: 550px;
+    margin: 20px;
+}

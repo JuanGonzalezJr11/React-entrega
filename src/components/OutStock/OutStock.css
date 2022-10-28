@@ -1,0 +1,16 @@
+.div-OutStock {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 90%;
+    margin-top: 5px;
+}
+
+.title-OutStock {
+    margin-top: 20px;
+}
+
+.img-OutStock {
+    width: 800px;
+    height: 300px;
+    margin: 20px;
+}

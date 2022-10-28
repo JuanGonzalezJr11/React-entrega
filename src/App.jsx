@@ -8,6 +8,9 @@ import { NotificationProvider } from './notification/Notification'
 import CartProvider from './context/CartContext';
 import Checkout from './components/Checkout/Checkout';
 import Cart from './components/Cart/Cart'
+import Home from './components/Home/Home';
+import NotFound from './components/NotFound/NotFound';
+import OutStock from './components/OutStock/OutStock';
 
 function App() {
   return(
@@ -20,12 +23,15 @@ function App() {
             </div>
             <div className="App-body">
               <Routes>
+                <Route path='/home' element={<Home />}/>
+                <Route path='/' element={<Home />}/>
                 <Route path='/products' element={<ItemListContainer />} />
                 <Route path='/products/:categoryId' element={<ItemListContainer />} />
                 <Route path='/products/detail/:productId' element={<ItemDetailContainer />} />
                 <Route path='/cart' element={<Cart />} />
                 <Route path='/checkout' element={<Checkout />} />
-                <Route path='/*' element={<h1>404 NOT FOUND</h1>} />
+                <Route path='/*' element={<NotFound />} />
+                <Route path='/outstock' element={<OutStock />} />
               </Routes>
               <Footer />
             </div>
